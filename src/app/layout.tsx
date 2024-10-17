@@ -1,21 +1,19 @@
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 import "./globals.css";
-import {Layout} from "@/components/layout";
-
+import {Providers} from "@/store";
 
 export const metadata: Metadata = {
-  title: "Movies",
+  title: "NextFlow",
   description: "Challenge application",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default function RootLayout({children,}: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
-    <Layout>
-        {children}
-    </Layout>
+    <Providers>
+      {children}
+    </Providers>
   );
 }

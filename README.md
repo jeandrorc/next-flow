@@ -1,8 +1,7 @@
-# Movies
+# NextFlow
 
 
-Este projeto tem como objetivo desenvolver uma interface que permita aos usuários visualizar a lista de indicados e vencedores da categoria **Pior Filme** do **Golden Raspberry Awards**. O Golden Raspberry Awards, também conhecido como Razzie Awards, é uma premiação que "homenageia" os piores filmes produzidos a cada ano, servindo como uma sátira ao Oscar.
-
+Criar uma interface web utilizando React, Next.js, e Tailwind CSS com as seguintes páginas: cadastro, login, recuperação de senha e home. Cada página deve ser implementada utilizando os melhores padrões de desenvolvimento, com foco em componentização e seguindo os princípios SOLID.
 
 ![License](https://img.shields.io/github/license/jeandrorc/movies-react-next)
 ![Last Commit](https://img.shields.io/github/last-commit/jeandrorc/movies-react-next)
@@ -41,12 +40,12 @@ Siga os passos abaixo para configurar o ambiente local:
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/jeandrorc/movies-react-next
+   git clone https://github.com/jeandrorc/next-flow
    ```
 2. **Acesse o diretório do projeto:**
 
    ```bash
-   cd movies-react-next
+   cd next-flow
    ```
 3. **Instale as dependências:**
 
@@ -57,14 +56,6 @@ Siga os passos abaixo para configurar o ambiente local:
     ```bash
     npm install
     ```
-## Configuração do Ambiente
-
-Crie um arquivo `.env.local` na raiz do projeto e adicione as seguintes variáveis de ambiente:
-
-   ```env
-   NEXT_PUBLIC_API_URL=https://api.themoviedb.org/3   # URL base da API
-   ```
-
 ## Executando o Projeto
 
 Para iniciar o servidor de desenvolvimento, execute o comando:

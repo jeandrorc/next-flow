@@ -1,10 +1,9 @@
 import React from 'react';
-import {cn} from "@/lib/utils";
 import Link from "next/link";
 
 export function Footer() {
     return (
-        <footer className={cn("text-gray-500 py-6")}>
+        <footer className="text-primary-foreground py-6">
             <div className="container mx-auto text-center">
                 <p className="text-sm">
                     &copy; 2024 <span className="font-semibold">Jeandro Couto</span>. All rights reserved.
