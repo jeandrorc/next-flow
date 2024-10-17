@@ -20,7 +20,11 @@ import { formSchema } from "@/containers/UserRegister/validation";
 import { useRegisterEffects } from "@/containers/UserRegister/hooks/useRegisterEffects";
 import {z} from "zod";
 
-export function CreateUserModal() {
+interface CreateUserModalProps {
+  onUserCreated: () => void;
+}
+
+export function CreateUserModal(props: CreateUserModalProps) {
   const [open, setOpen] = useState<boolean>(false);
   const { register, loading } = useUserService();
 
@@ -29,7 +33,7 @@ export function CreateUserModal() {
     defaultValues: {
       fullName: "",
       email: "",
-      cep: "",
+      postalCode: "",
       street: "",
       number: "",
       city: "",
@@ -45,7 +49,7 @@ export function CreateUserModal() {
   const handleSubmit = async (data: z.infer<typeof formSchema>) => {
     try {
       await register(data);
-      alert("Usuário criado com sucesso!");
+      props.onUserCreated();
       setOpen(false);
     } catch (err) {
       console.error("Erro ao criar usuário:", err);
@@ -56,7 +60,7 @@ export function CreateUserModal() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="primary" className="flex items-center gap-2">
+        <Button variant="default" className="flex items-center gap-2">
           + Adicionar Usuário
         </Button>
       </DialogTrigger>

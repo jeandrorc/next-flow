@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import {AuthLayout as AuthLayoutContainer} from "@/components/layout";
 
 export const metadata: Metadata = {
-  title: "Frontend Challenge |  Auth",
+  title: "NextFlow",
   description: "Challenge application",
 };
 

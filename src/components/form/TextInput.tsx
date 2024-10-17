@@ -55,6 +55,8 @@ export function TextInput<T extends FieldValues>({
                   value={field.value as string}
                   onChange={field.onChange}
                   onBlur={field.onBlur}
+                  disabled={disabled}
+                  readOnly={readOnly}
                 >
                   {(inputProps) => (
                     <div>
@@ -83,6 +85,7 @@ export function TextInput<T extends FieldValues>({
                   disabled={disabled}
                 />
               )}
+
               {appendInnerRight && <div className="absolute right-2">{appendInnerRight}</div>}
             </div>
           </FormControl>

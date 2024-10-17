@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:bypes": "next build --ignore-build-errors",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
@@ -60,7 +61,6 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/react-input-mask": "^3.0.5",
     "@vitejs/plugin-react": "^4.3.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",

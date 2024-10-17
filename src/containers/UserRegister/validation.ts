@@ -12,7 +12,7 @@ export const formSchema = z.object({
     .string()
     .email('Por favor, informe um e-mail válido.'),
 
-  cep: z
+  postalCode: z
     .string()
     .regex(cepRegex, "Informe um CEP válido, no formato 12345-678.")
     .min(8, "O CEP deve ter 8 caracteres.")

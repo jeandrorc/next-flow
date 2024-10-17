@@ -76,3 +76,10 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: default;
+  text-decoration: none;
+}

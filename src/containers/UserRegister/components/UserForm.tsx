@@ -21,7 +21,7 @@ import { FiHash, FiLock, FiMail, FiMapPin, FiUser } from "react-icons/fi";
 interface UserFormValues {
   fullName: string;
   email: string;
-  cep: string;
+  postalCode: string;
   city: string;
   state: string;
   street: string;
@@ -92,7 +92,7 @@ export function UserForm({
             <HBox>
               <TextInput
                 form={form}
-                name="cep"
+                name="postalCode"
                 label="CEP"
                 placeholder="Digite seu CEP"
                 mask="99999-999"

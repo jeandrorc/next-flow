@@ -3,7 +3,7 @@ import {Layout} from "@/components/layout";
 import {AuthGuard} from "@/components/pages";
 
 export const metadata: Metadata = {
-  title: "Movies",
+  title: "NextFlow",
   description: "Challenge application",
 };
 

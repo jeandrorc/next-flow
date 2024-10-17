@@ -23,7 +23,7 @@ export function UserRegisterPage() {
     defaultValues: {
       fullName: "",
       email: "",
-      cep: "",
+      postalCode: "",
       street: "",
       number: "",
       city: "",
@@ -47,7 +47,7 @@ export function UserRegisterPage() {
         router.push('/auth/login');
       }, 3000);
     } catch (err) {
-      setErrorMessage(err.message);
+      setErrorMessage((err as Error).message);
     }
   };
 

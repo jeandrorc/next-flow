@@ -3,7 +3,7 @@ import { fetchAddressByCEP } from '@/lib/cepApi';
 import {CepResponse} from "@/models/Cep";
 
 export function useAddress() {
-    const [address, setAddress] = useState<CepResponse>({});
+    const [address, setAddress] = useState<CepResponse | undefined>(undefined);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 

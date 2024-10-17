@@ -15,7 +15,7 @@ export interface CreateUserPayload {
   fullName: string;
   email: string;
   password: string;
-  password_confirmation: string;
+  passwordConfirmation: string;
   street: string;
   neighborhood: string;
   number: string;

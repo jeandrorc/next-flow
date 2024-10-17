@@ -2,8 +2,21 @@ import { useEffect } from "react";
 import { useAddress } from "@/hooks/useAddress";
 import { UseFormReturn, FieldValues } from "react-hook-form";
 
-export function useRegisterEffects<T extends FieldValues>(form: UseFormReturn<T>) {
-  const cepWatch = form.watch("cep") as string;
+interface RegisterFormValues extends FieldValues {
+  postalCode: string;
+  city: string;
+  state: string;
+  street: string;
+  neighborhood: string;
+  fullName: string;
+  email: string;
+  password: string;
+  passwordConfirmation: string;
+  number: string;
+}
+
+export function useRegisterEffects(form: UseFormReturn<RegisterFormValues>) {
+  const cepWatch = form.watch("postalCode");
   const { address, searchAddress, loading, error } = useAddress();
 
   useEffect(() => {
@@ -15,11 +28,12 @@ export function useRegisterEffects<T extends FieldValues>(form: UseFormReturn<T>
 
   useEffect(() => {
     if (error) {
-      form.setError("cep", { type: "manual", message: error });
+      form.setError("postalCode", { type: "manual", message: error });
     }
   }, [error, form]);
 
   useEffect(() => {
+    if (!address) return;
     form.setValue("city", address.localidade || "");
     form.setValue("state", address.uf || "");
     form.setValue("street", address.logradouro || "");

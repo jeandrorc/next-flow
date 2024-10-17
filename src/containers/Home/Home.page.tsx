@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import { UsersTable } from "@/containers/Home/components/UsersTable";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useUserService } from "@/hooks/useUserService";
@@ -11,11 +11,15 @@ export function HomePage() {
   const { fetchUsers, loading } = useUserService();
   const [userCount, setUserCount] = useState(0);
 
-  useEffect(() => {
+  const handleFetchUsers = useCallback(() => {
     fetchUsers()
       .then((data) => setUserCount(data.length))
       .catch((err) => console.error(err));
   }, [fetchUsers]);
+
+  useEffect(() => {
+    handleFetchUsers();
+  }, [handleFetchUsers]);
 
   return (
     <div className="container mx-auto p-6">
@@ -24,7 +28,7 @@ export function HomePage() {
           <h1 className="text-3xl font-bold text-gray-800">Bem-vindo!</h1>
           <p className="text-gray-500">Aqui está um resumo dos usuários cadastrados.</p>
         </div>
-        <CreateUserModal/>
+        <CreateUserModal onUserCreated={fetchUsers}/>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
